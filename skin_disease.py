@@ -37,9 +37,12 @@ get_custom_objects()['focal_loss_fixed'] = focal_loss_fixed
 def load_models():
     try:
         models = {
-            'EfficientNetB0': load_model('EfficientNetB0_disease_model.keras', custom_objects={'focal_loss_fixed': focal_loss_fixed}),
-            'DenseNet121': load_model('DenseNet121_disease_model.keras', custom_objects={'focal_loss_fixed': focal_loss_fixed})
-        }
+    'EfficientNetB0': load_model('EfficientNetB0_disease_model.keras', custom_objects={'focal_loss_fixed': focal_loss_fixed}),
+    'DenseNet121': load_model('DenseNet121_disease_model.keras', custom_objects={'focal_loss_fixed': focal_loss_fixed}),
+    'InceptionV3': load_model('InceptionV3_disease_model.keras', custom_objects={'focal_loss_fixed': focal_loss_fixed}),
+    'ResNet152V2': load_model('ResNet152V2_disease_model.keras', custom_objects={'focal_loss_fixed': focal_loss_fixed}),
+}
+
         return models
     except Exception as e:
         st.error(f"Error loading models: {e}")
